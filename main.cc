@@ -82,14 +82,13 @@ void test_long_init_owo()
 #include <print>
 void report_throughput(double seconds, long ops_per_second)
 {
-	std::print("time: {}s\nthroughput: {} ops/s", seconds, ops_per_second);
+	std::print("Time: {}s.  Throughput: {} ops/s\n", seconds, ops_per_second);
 }
 #else
 #include <iostream>
 void report_throughput(double seconds, long ops_per_second)
 {
-	std::cout << "time: " << seconds << "s\n"
-		"throughput: " << ops_per_second << " ops/s\n";
+    std::cout << "Time: " << seconds << "s.  Throughput: " << ops_per_second << " ops/s\n";
 }
 #endif
 
@@ -109,6 +108,7 @@ void test_throughput_wo(int times_per_thread, size_t threads_num)
 	auto t2 = std::chrono::system_clock::now();
 	auto duration = t2 - t1;
 	auto duration_seconds = std::chrono::duration_cast<std::chrono::duration<double>>(duration).count();
+    std::cout << "ThreadNum: " << threads_num << "    ";
 	report_throughput(duration_seconds, times_per_thread * threads_num / duration_seconds);
 }
 
