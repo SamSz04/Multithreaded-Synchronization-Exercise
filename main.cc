@@ -108,7 +108,7 @@ void test_throughput_wo(int times_per_thread, size_t threads_num)
 	auto t2 = std::chrono::system_clock::now();
 	auto duration = t2 - t1;
 	auto duration_seconds = std::chrono::duration_cast<std::chrono::duration<double>>(duration).count();
-    std::cout << "ThreadNum: " << threads_num << "    ";
+    	std::cout << "ThreadNum: " << threads_num << "    ";
 	report_throughput(duration_seconds, times_per_thread * threads_num / duration_seconds);
 }
 
@@ -128,6 +128,7 @@ void test_throughput_owo(int times_per_thread, size_t threads_num)
     auto t2 = std::chrono::system_clock::now();
     auto duration = t2 - t1;
     auto duration_seconds = std::chrono::duration_cast<std::chrono::duration<double>>(duration).count();
+    std::cout << "ThreadNum: " << threads_num << "    ";
     report_throughput(duration_seconds, times_per_thread * threads_num / duration_seconds);
 }
 
