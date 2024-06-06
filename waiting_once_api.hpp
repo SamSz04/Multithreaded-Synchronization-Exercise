@@ -29,7 +29,7 @@ private:
     bool initialized = false;
 };
 
-class optimized_waiting_once {
+struct optimized_waiting_once {
 #if __cpp_lib_move_only_function >= 202110L
     using init_function = std::move_only_function<void()>;
 #else
